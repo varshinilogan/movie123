@@ -9,7 +9,7 @@ searchButton.addEventListener("click", () => {
   }
 });
 
-const apiKey = "532bacd1";
+const apiKey = "532bacd1"; 
 
 function searchMovies(query) {
   const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
@@ -17,11 +17,7 @@ function searchMovies(query) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      if (data.Response === "True") {
-        displayMovies(data.Search);
-      } else {
-        resultsContainer.innerHTML = `<p class='text-gray-500'>${data.Error}</p>`;
-      }
+      displayMovies(data.Search);
     })
     .catch(err => {
       console.error("API error:", err);
@@ -49,4 +45,3 @@ function displayMovies(movies) {
     resultsContainer.appendChild(movieCard);
   });
 }
-
