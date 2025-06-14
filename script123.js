@@ -12,7 +12,7 @@ searchButton.addEventListener("click", () => {
 const apiKey = b2cdbe4c;
 
 function searchMovies(query) {
-  const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
+  const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${b2cdbe4c}`;
   
   fetch(url)
     .then(res => res.json())
