@@ -17,7 +17,11 @@ function searchMovies(query) {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      displayMovies(data.Search);
+      if (data.Response === "True") {
+        displayMovies(data.Search);
+      } else {
+        resultsContainer.innerHTML = `<p class='text-gray-500'>${data.Error}</p>`;
+      }
     })
     .catch(err => {
       console.error("API error:", err);
